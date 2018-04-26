@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Francisco Carmona <fcarmona.olmedo@gmail.com>
+MAINTAINER Teeppiphat Phokaewkul <teeppiphat@gmail.com>
 
 # Environments vars
 ENV TERM=xterm
@@ -9,22 +9,24 @@ RUN apt-get -y upgrade
 
 # Packages installation
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y --fix-missing install apache2 \
-      php \
-      php-cli \
-      php-gd \
-      php-json \
-      php-mbstring \
-      php-xml \
-      php-xsl \
-      php-zip \
-      php-soap \
-      php-pear \
-      php-mcrypt \
-      libapache2-mod-php \
+      php7.2 \
+      php7.2-cli \
+      php7.2-gd \
+      php7.2-json \
+      php7.2-mbstring \
+      php7.2-xml \
+      php7.2-xsl \
+      php7.2-zip \
+      php7.2-soap \
+      php7.2-pear \
+      php7.2-mcrypt \
+      php7.2-mysql \
+      php7.2-memcache \
+      libapache2-mod-php7.2 \
       curl \
-      php-curl \
+      php7.2-curl \
       apt-transport-https \
-      nano \
+      vim \
       lynx-cur
 
 RUN a2enmod rewrite
@@ -41,7 +43,7 @@ ADD config/apache/ports.conf /etc/apache2/ports.conf
 ADD config/apache/envvars /etc/apache2/envvars
 
 # Update php.ini
-ADD config/php/php.conf /etc/php/7.0/apache2/php.ini
+ADD config/php/php.conf /etc/php/7.2/apache2/php.ini
 
 # Init
 ADD init.sh /init.sh
