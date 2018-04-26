@@ -53,11 +53,12 @@ ADD config/apache/apache2.conf /etc/apache2/apache2.conf
  * php7.0-soap
  * php7.0-pear
  * php7.0-mcrypt
+ * php7.0-mysql
  * php7.0-curl
  * curl
  * libapacha2-mod-php
  * apt-transport-https
- * nano
+ * vim
  * lynx-cur
  * composer
 
@@ -68,7 +69,7 @@ ADD config/apache/apache2.conf /etc/apache2/apache2.conf
 ## Exposed volumes
 
  - webroot: `/var/www`
- 
+
 ## Out of the box
 
  * Ubuntu 16.04 LTS
